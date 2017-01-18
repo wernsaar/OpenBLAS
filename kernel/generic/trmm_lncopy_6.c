@@ -39,12 +39,10 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
   FLOAT data09, data10, data11, data12, data13, data14, data15, data16;
   FLOAT data17, data18, data19, data20, data21, data22, data23, data24;
   FLOAT data25, data26, data27, data28, data29, data30, data31, data32;
-  FLOAT data33, data34, data35, data36, data37, data38, data39, data40;
-  FLOAT data41, data42, data43, data44, data45, data46, data47, data48;
-  FLOAT data49, data50, data51, data52, data53, data54, data55, data56;
-  FLOAT data57, data58, data59, data60, data61, data62, data63, data64;
+  FLOAT data33, data34, data35, data36;
+  FLOAT data41, data42, data43, data44;
 
-  FLOAT *ao1, *ao2, *ao3, *ao4, *ao5, *ao6, *ao7, *ao8;
+  FLOAT *ao1, *ao2, *ao3, *ao4, *ao5, *ao6;
 
   BLASLONG ndiv = n/6;
   BLASLONG nmod = n%6;
@@ -577,7 +575,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
   } /* End of main loop */
 
 
-  if (n & 4){
+  if (nmod & 4){
       X = posX;
 
       if (posX <= posY) {
@@ -854,7 +852,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
       posY += 4;
   }
 
-  if (n & 2){
+  if (nmod & 2){
       X = posX;
 
       if (posX <= posY) {
@@ -949,7 +947,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
       posY += 2;
   }
 
-  if (n & 1){
+  if (nmod & 1){
       X = posX;
 
       if (posX <= posY) {

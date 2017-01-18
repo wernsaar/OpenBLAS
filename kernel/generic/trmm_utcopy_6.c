@@ -600,7 +600,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
   } /* End of main loop */
 
 
-  if (nnmod & 4){
+  if (nmod & 4){
       X = posX;
 
       if (posX <= posY) {

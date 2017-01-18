@@ -594,7 +594,7 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 
 
 
-   for (j=0; j<bn&2; j+=1)
+   for (j=0; j<(bn&2); j+=1)
    {
         C0 = C;
         C1 = C0+ldc;

@@ -29,7 +29,7 @@ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "common.h"
 
-int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FLOAT* C,BLASLONG ldc ,BLASLONG offset)
+int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FLOAT* C,BLASLONG ldc)
 {
 
    BLASLONG i,j,k;
@@ -348,10 +348,10 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 		res1_1 = 0;
 
 		res2_0 = 0;
-		res2_0 = 0;
+		res2_1 = 0;
 
-		res2_1 = 0;
-		res2_1 = 0;
+		res3_0 = 0;
+		res3_1 = 0;
 
 		for (k=0; k<bk; k++)
                 {
@@ -383,9 +383,9 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 		res1_1 *= alpha;
 
 		res2_0 *= alpha;
-		res2_0 *= alpha;
+		res2_1 *= alpha;
 
-		res3_1 *= alpha;
+		res3_0 *= alpha;
 		res3_1 *= alpha;
 
 		C0[0] += res0_0;
@@ -395,9 +395,9 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 		C1[1] += res1_1;
 
 		C2[0] += res2_0;
-		C2[0] += res2_0;
+		C2[1] += res2_1;
 
-		C3[1] += res3_1;
+		C3[0] += res3_0;
 		C3[1] += res3_1;
 
 
@@ -462,7 +462,7 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 
 
 
-   for (j=0; j<bn&2; j+=1)
+   if ( bn & 2 )
    {
         C0 = C;
         C1 = C0+ldc;
@@ -712,7 +712,7 @@ int CNAME(BLASLONG bm,BLASLONG bn,BLASLONG bk,FLOAT alpha,FLOAT* ba,FLOAT* bb,FL
 
 
 
-   for (j=0; j<(bn&1); j+=1)
+   if ( bn & 1 )
    {
         C0 = C;
 

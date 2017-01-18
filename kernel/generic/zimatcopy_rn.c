@@ -34,8 +34,8 @@ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 int CNAME(BLASLONG rows, BLASLONG cols, FLOAT alpha_r, FLOAT alpha_i, FLOAT *a, BLASLONG lda)
 {
 	BLASLONG i,j,ia;
-	FLOAT *aptr,*bptr;
-    FLOAT a0, a1; 
+	FLOAT *aptr;
+        FLOAT a0, a1; 
 
 	if ( rows <= 0     )  return(0);
 	if ( cols <= 0     )  return(0);
@@ -50,8 +50,8 @@ int CNAME(BLASLONG rows, BLASLONG cols, FLOAT alpha_r, FLOAT alpha_i, FLOAT *a, 
 
 		for(j=0; j<cols; j++)
 		{
-            a0 = aptr[ia]; 
-            a1 = aptr[ia+1];
+                        a0 = aptr[ia]; 
+                        a1 = aptr[ia+1];
 			aptr[ia]   = alpha_r * a0   - alpha_i * a1;
 			aptr[ia+1] = alpha_r * a1   + alpha_i * a0;
 			ia += 2;
