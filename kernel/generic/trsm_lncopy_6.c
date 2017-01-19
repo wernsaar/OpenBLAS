@@ -84,9 +84,9 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG offset, FLOAT
 	data08 = *(a2 + 1);
 #endif
 	data09 = *(a2 + 2);
-	data11 = *(a2 + 3);
-	data12 = *(a2 + 4);
-	data13 = *(a2 + 5);
+	data10 = *(a2 + 3);
+	data11 = *(a2 + 4);
+	data12 = *(a2 + 5);
 
 #ifndef UNIT
 	data15 = *(a3 + 2);

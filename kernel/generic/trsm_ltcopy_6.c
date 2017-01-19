@@ -131,8 +131,8 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG offset, FLOAT
 	*(b + 17) = data18;
 
 	*(b + 21) = INV(data22);
-	*(b + 19) = data23;
-	*(b + 20) = data24;
+	*(b + 22) = data23;
+	*(b + 23) = data24;
 
 	*(b + 28) = INV(data29);
 	*(b + 29) = data30;
