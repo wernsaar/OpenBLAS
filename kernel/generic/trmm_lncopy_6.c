@@ -569,7 +569,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
 	  }
       }
 
-      posY += 8;
+      posY += 6;
       js --;
     } while (js > 0);
   } /* End of main loop */

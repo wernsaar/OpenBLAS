@@ -262,8 +262,8 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
 #else
 	      b[21] = data22;
 #endif
-	      b[22] = data23;
-	      b[23] = data24;
+	      b[22] = data28;
+	      b[23] = data34;
 
 	      b[24] = ZERO;
 	      b[25] = ZERO;
@@ -274,7 +274,7 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
 #else
 	      b[28] = data29;
 #endif
-	      b[29] = data30;
+	      b[29] = data35;
 
 
 	      b[30] = ZERO;

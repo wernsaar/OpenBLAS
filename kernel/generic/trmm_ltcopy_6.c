@@ -211,13 +211,11 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
 #endif
 	      data23 = *(ao4 + 4);
 	      data24 = *(ao4 + 5);
-	      data24 = *(ao4 + 6);
-	      data25 = *(ao4 + 7);
 
 #ifndef UNIT
-	      data30 = *(ao5 + 4);
+	      data29 = *(ao5 + 4);
 #endif
-	      data31 = *(ao5 + 5);
+	      data30 = *(ao5 + 5);
 
 #ifndef UNIT
 	      data36 = *(ao6 + 5);
@@ -275,9 +273,9 @@ int CNAME(BLASLONG m, BLASLONG n, FLOAT *a, BLASLONG lda, BLASLONG posX, BLASLON
 #ifdef UNIT
 	      b[28] = ONE;
 #else
-	      b[28] = data30;
+	      b[28] = data29;
 #endif
-	      b[29] = data31;
+	      b[29] = data30;
 
 	      b[30] = ZERO;
 	      b[31] = ZERO;
