@@ -280,7 +280,7 @@ int CNAME(BLASLONG m, BLASLONG n, BLASLONG k,  FLOAT dummy1,
       if (mmod > 0 ) {
 	i = 4;
 	do {
-	  if (m & i) {
+	  if (mmod & i) {
 	    if (k - kk > 0) {
 	      GEMM_KERNEL(i, GEMM_UNROLL_N, k - kk, dm1,
 #ifdef COMPLEX
